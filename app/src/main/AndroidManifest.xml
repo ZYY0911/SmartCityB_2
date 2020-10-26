@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.smartcityb_2">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".AppClient"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.GuildActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.AppMainActivity">
+
+        </activity>
+        <activity android:name=".activity.SearchNews" />
+        <activity android:name=".activity.EmptyActivity" />
+        <activity android:name=".activity.ChoosePhoto" />
+        <activity android:name=".activity.OrderActivity" />
+        <activity android:name=".activity.OrderDetailsActivity" />
+        <activity android:name=".activity.YjfkActivity" />
+        <activity android:name=".activity.HdDetailsActivity" />
+        <activity android:name=".activity.WzDetailsActivity" />
+        <activity android:name=".activity.WzDetailsLook" />
+        <activity android:name=".activity.YySeccessfulActivity" />
+        <activity android:name=".activity.DempartListActivity" />
+        <activity android:name=".activity.YyghActivity" />
+        <activity android:name=".activity.ChratJzkActivity" />
+        <activity android:name=".activity.JzkActivity" />
+        <activity android:name=".activity.HosptialDetails" />
+        <activity android:name=".activity.WebEmptyActivity" />
+        <activity android:name=".activity.YyylyActivity" />
+        <activity android:name=".activity.YlyDetails" />
+        <activity android:name=".activity.PPtjcActivity" />
+        <activity android:name=".activity.JzjcActivity" />
+
+    </application>
+
+</manifest>
