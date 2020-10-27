@@ -27,7 +27,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/bt_style"
-            android:text="+新政就诊卡"
+            android:text="+新增就诊卡"
             android:textColor="#fff" />
 
     </RelativeLayout>

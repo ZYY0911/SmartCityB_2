@@ -233,7 +233,7 @@ public class HomeFragment extends Fragment {
                                     appMainActivity.switchFragment(appMainActivity.map.get("违章查询"));
                                 } else if (name.equals("门诊预约")) {
                                     appMainActivity.switchFragment(appMainActivity.map.get("门诊预约"));
-                                } else if (name.equals("全部服务")) {
+                                } else if (name.equals("更多服务")) {
                                     appMainActivity.switchFragment(appMainActivity.map.get("全部服务"));
                                 } else {
                                     WebEmptyActivity.newInstance(serviceOrders.get(position).getId(),getActivity());

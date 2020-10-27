@@ -1,6 +1,7 @@
 package com.example.smartcityb_2.dialog;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.example.smartcityb_2.R;
 import com.example.smartcityb_2.util.Util;
@@ -27,6 +29,8 @@ public class YyDialog extends DialogFragment {
     private EditText etJb;
     private Button btSubmit;
     private Button btExit;
+    private EditText etTel;
+    private TextView etTime;
 
     @Nullable
     @Override
@@ -63,6 +67,25 @@ public class YyDialog extends DialogFragment {
                 datePickerDialog.show();
             }
         });
+        etTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        etTime.setText(year + "-" + (month + 1) + "-" + dayOfMonth);
+                        TimePickerDialog dialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                etTime.setText(etTime.getText() + " " + hourOfDay + ":" + minute);
+                            }
+                        }, 9, 14, true);
+                        dialog.show();
+                    }
+                }, 2020, 9, 26);
+                datePickerDialog.show();
+            }
+        });
     }
 
     private void initView() {
@@ -71,5 +94,7 @@ public class YyDialog extends DialogFragment {
         etJb = getView().findViewById(R.id.et_jb);
         btSubmit = getView().findViewById(R.id.bt_submit);
         btExit = getView().findViewById(R.id.bt_exit);
+        etTel = getView().findViewById(R.id.et_tel);
+        etTime = getView().findViewById(R.id.et_time);
     }
 }

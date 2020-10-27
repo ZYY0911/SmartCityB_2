@@ -61,6 +61,12 @@ public class YySeccessfulActivity extends AppCompatActivity {
                 AppClient.finAll();
             }
         });
+        itemChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppClient.finAll();
+            }
+        });
         chooseTime = (ChooseTime) getIntent().getSerializableExtra("info2");
         hospitalBean = (HospitalBean) getIntent().getSerializableExtra("info");
         userInfo = (UserInfo) getIntent().getSerializableExtra("info3");

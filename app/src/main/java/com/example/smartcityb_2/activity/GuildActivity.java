@@ -55,6 +55,10 @@ public class GuildActivity extends AppCompatActivity {
                 fragments.add(new GuildFragment2(iamge[i]));
             }
             ImageView imageView = new ImageView(this);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(20,20);
+            layoutParams.setMargins(30,0,30,0);
+            imageView.setLayoutParams(layoutParams);
+
             if (i == 0) {
                 imageView.setImageResource(R.drawable.selsect_image);
             } else {

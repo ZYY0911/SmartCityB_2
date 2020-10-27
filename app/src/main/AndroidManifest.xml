@@ -42,6 +42,8 @@
         <activity android:name=".activity.YlyDetails" />
         <activity android:name=".activity.PPtjcActivity" />
         <activity android:name=".activity.JzjcActivity" />
+        <activity android:name=".activity.FwjlActivity"/>
+        <activity android:name=".activity.FwpjActivity"/>
 
     </application>
 

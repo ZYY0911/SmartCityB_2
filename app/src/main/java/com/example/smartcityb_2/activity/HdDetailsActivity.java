@@ -7,12 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
-import com.example.smartcityb_2.AppClient;
 import com.example.smartcityb_2.R;
 import com.example.smartcityb_2.adapter.HdAdapter;
 import com.example.smartcityb_2.adapter.PLAdapter;
@@ -57,6 +56,7 @@ public class HdDetailsActivity extends AppCompatActivity {
     private MyListView plList;
     private MyListView tjList;
     private TextView etPl;
+    private ScrollView scrollView;
 
     public static void newInstance(HdDetails hdDetails, Context context) {
         Intent intent = new Intent(context, HdDetailsActivity.class);
@@ -212,6 +212,12 @@ public class HdDetailsActivity extends AppCompatActivity {
                             }
                         });
                         plList.setAdapter(new PLAdapter(HdDetailsActivity.this, hdpls));
+                      scrollView  .post(new Runnable() {
+                            @Override
+                            public void run() {
+                                scrollView.fullScroll(View.FOCUS_UP);
+                            }
+                        });
                     }
 
                     @Override
@@ -231,5 +237,6 @@ public class HdDetailsActivity extends AppCompatActivity {
         plList = findViewById(R.id.pl_list);
         tjList = findViewById(R.id.tj_list);
         etPl = findViewById(R.id.et_pl);
+        scrollView = findViewById(R.id.scroll_view);
     }
 }

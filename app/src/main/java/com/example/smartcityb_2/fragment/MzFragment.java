@@ -1,10 +1,12 @@
 package com.example.smartcityb_2.fragment;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -12,7 +14,6 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.example.smartcityb_2.R;
 import com.example.smartcityb_2.activity.AppMainActivity;
-import com.example.smartcityb_2.activity.HdDetailsActivity;
 import com.example.smartcityb_2.activity.HosptialDetails;
 import com.example.smartcityb_2.adapter.HosptialAdapter;
 import com.example.smartcityb_2.bean.HospitalBean;
@@ -25,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -40,6 +42,8 @@ public class MzFragment extends Fragment {
     private TextView title;
     private TextView title1;
     private ListView listView;
+    private EditText etSearch;
+    private Button btQuery;
 
     public MzFragment() {
 
@@ -75,6 +79,31 @@ public class MzFragment extends Fragment {
             }
         });
         setVolley();
+        btQuery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(etSearch.getText())){
+                    setVolley();
+                }else {
+                    List<HospitalBean> hospitalBeans1  = new ArrayList<>();
+                    for (int i = 0; i < hospitalBeans.size(); i++) {
+                        HospitalBean hospitalBean = hospitalBeans.get(i);
+                        if (hospitalBean.getHospitalName().contains(etSearch.getText().toString())){
+                            hospitalBeans1.add(hospitalBean);
+                        }
+                    }
+                    HosptialAdapter adapter = new HosptialAdapter(getActivity(), hospitalBeans1);
+                    listView.setAdapter(adapter);
+                    adapter.setOnClickItem(new OnClickItem() {
+                        @Override
+                        public void onClick(int position, String name) {
+                            HosptialDetails.newInstance(hospitalBeans.get(position), getActivity());
+                        }
+                    });
+                }
+
+            }
+        });
 
     }
 
@@ -96,7 +125,6 @@ public class MzFragment extends Fragment {
                             @Override
                             public void onClick(int position, String name) {
                                 HosptialDetails.newInstance(hospitalBeans.get(position), getActivity());
-
                             }
                         });
 
@@ -114,5 +142,7 @@ public class MzFragment extends Fragment {
         title = getView().findViewById(R.id.title);
         title1 = getView().findViewById(R.id.title1);
         listView = getView().findViewById(R.id.list_view);
+        etSearch =getView(). findViewById(R.id.et_search);
+        btQuery =getView(). findViewById(R.id.bt_query);
     }
 }

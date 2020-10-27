@@ -20,6 +20,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="环境信息"
                 android:textColor="#333"
                 android:textSize="23sp" />
@@ -36,6 +37,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="身体状况"
                 android:textColor="#333"
                 android:textSize="23sp" />

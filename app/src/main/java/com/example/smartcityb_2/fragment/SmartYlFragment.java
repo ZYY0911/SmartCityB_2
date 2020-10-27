@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.smartcityb_2.R;
 import com.example.smartcityb_2.activity.AppMainActivity;
+import com.example.smartcityb_2.activity.FwjlActivity;
 import com.example.smartcityb_2.activity.JzjcActivity;
 import com.example.smartcityb_2.activity.PPtjcActivity;
 import com.example.smartcityb_2.activity.YyylyActivity;
@@ -71,6 +72,12 @@ public class SmartYlFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), JzjcActivity.class));
+            }
+        });
+        layoutFwjl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), FwjlActivity.class));
             }
         });
     }
