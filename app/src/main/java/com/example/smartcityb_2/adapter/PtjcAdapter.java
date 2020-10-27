@@ -1,6 +1,7 @@
 package com.example.smartcityb_2.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,8 @@ public class PtjcAdapter extends ArrayAdapter<PtjcBean> {
         super(context, 0, objects);
     }
 
+    private int layout [] = {Color.parseColor("#CFDFCF"),Color.parseColor("#CEE3E0")
+            ,Color.parseColor("#CFDFCF")};
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -34,9 +37,23 @@ public class PtjcAdapter extends ArrayAdapter<PtjcBean> {
         TextView itemName = convertView.findViewById(R.id.item_name);
         TextView itemNum = convertView.findViewById(R.id.item_num);
         PtjcBean ptjcBean = getItem(position);
-        btColor.setBackgroundColor(ptjcBean.getCoolor());
         itemNum.setText(ptjcBean.getValue() + "");
         itemName.setText(ptjcBean.getName());
+        switch (position){
+            case 0:
+            case 1:
+                btColor.setBackgroundColor(layout[0]);
+
+                break;
+            case 2:
+            case 3:
+                btColor.setBackgroundColor(layout[1]);
+                break;
+            case 4: case 5:
+                btColor.setBackgroundColor(layout[2]);
+                break;
+
+        }
         return convertView;
     }
 

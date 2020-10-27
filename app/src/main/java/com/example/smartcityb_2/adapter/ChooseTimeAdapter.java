@@ -52,7 +52,7 @@ public class ChooseTimeAdapter extends ArrayAdapter<ChooseTime> {
          * doctorId : 21
          */
         ChooseTime chooseTime = getItem(position);
-        holder.itemName.setText(chooseTime.getTime() + "," + name);
+        holder.itemName.setText(chooseTime.getTime() + "\n" + name);
         holder.itemBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

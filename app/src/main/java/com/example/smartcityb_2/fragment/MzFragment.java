@@ -108,6 +108,14 @@ public class MzFragment extends Fragment {
     }
 
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        if (!hidden){
+            etSearch.setText("");
+        }
+        super.onHiddenChanged(hidden);
+    }
+
     List<HospitalBean> hospitalBeans;
 
     private void setVolley() {

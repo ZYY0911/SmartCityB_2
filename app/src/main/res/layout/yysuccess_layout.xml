@@ -6,6 +6,16 @@
 
     <include layout="@layout/head" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="预约成功"
+        android:textColor="#333"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        android:gravity="center"/>
+
+
 
     <TextView
         android:id="@+id/tv_msg"
@@ -14,7 +24,7 @@
         android:layout_weight="1"
         android:padding="20dp"
         android:textColor="#000"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
 
     <TextView

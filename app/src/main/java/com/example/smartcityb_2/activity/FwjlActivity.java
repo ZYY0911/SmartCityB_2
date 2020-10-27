@@ -76,16 +76,24 @@ public class FwjlActivity extends AppCompatActivity {
         rlBeans = new ArrayList<>();
         integers = new ArrayList<>();
         Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_MONTH,-20);
         for (int i = 0; i < calendar.get(Calendar.DAY_OF_WEEK) - 1; i++) {
             rlBeans.add(new RlBean(i, 0, 0, 3));
             integers.add(3);
         }
-        for (int i = 0; i < 42; i++) {
-            rlBeans.add(new RlBean(i, calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.MONTH) + 1, getBg(calendar)));
+        for (int i = 0; i < 21; i++) {
+            rlBeans.add(new RlBean(i, calendar.get(Calendar.DAY_OF_MONTH),
+                    calendar.get(Calendar.MONTH) + 1, i==20?2:getBg(calendar)));
+
             integers.add(getBg(calendar));
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }
-        int count = 49 - rlBeans.size();
+        for (int i = 0; i < 7; i++) {
+            rlBeans.add(new RlBean(i, calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.MONTH) + 1, 3));
+            integers.add(3);
+            calendar.add(Calendar.DAY_OF_MONTH, 1);
+        }
+        int count = 35 - rlBeans.size();
         if (rlBeans.size() != 42) {
             for (int i = 0; i < count; i++) {
                 rlBeans.add(new RlBean(i, 0, 0, 3));
@@ -167,7 +175,7 @@ public class FwjlActivity extends AppCompatActivity {
         if (calendar.get(Calendar.DAY_OF_WEEK) == 7
                 || calendar.get(Calendar.DAY_OF_WEEK) == 1) {
             return 1;
-        } else {
+        } else  {
             return 0;
         }
     }

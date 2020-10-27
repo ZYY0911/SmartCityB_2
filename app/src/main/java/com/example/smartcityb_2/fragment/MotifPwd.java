@@ -100,7 +100,6 @@ public class MotifPwd extends Fragment {
                             public void onResponse(JSONObject jsonObject) {
                                 if (jsonObject.optString("RESULT").equals("S")) {
                                     Util.showToast("修改成功", getActivity());
-                                    setView();
                                 } else {
                                     Util.showToast("修改成功", getActivity());
                                 }

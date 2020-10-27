@@ -83,9 +83,9 @@ public class YySeccessfulActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         if (jsonObject.optString("RESULT").equals("S")) {
-                            tvMsg.setText("预约结果" + "\r\n\r\n" +
-                                    "预约科室：" + dempartList.getDeptName() + "\r\n"
-                                    + "门诊类型：" + chooseTime.getType() + "\r\n"
+                            tvMsg.setText(
+                                    "预约科室：" + dempartList.getDeptName() + "\n\n"
+                                    + "门诊类型：" + chooseTime.getType() + "\n\n"
                                     + "预约时间：" + jsonObject.optJSONObject("data")
                                     .optString("appTime"));
                         } else {
