@@ -20,6 +20,14 @@ public class Hdpl  {
     private String commitTime;
     private String commitContent;
 
+    public Hdpl(int num, int id, String username, String commitTime, String commitContent) {
+        this.num = num;
+        this.id = id;
+        this.username = username;
+        this.commitTime = commitTime;
+        this.commitContent = commitContent;
+    }
+
     public int getNum() {
         return num;
     }

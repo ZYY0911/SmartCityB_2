@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="平台监测"
+                    android:text="监测平台"
                     android:textColor="#333"
                     android:textSize="20sp" />
             </LinearLayout>

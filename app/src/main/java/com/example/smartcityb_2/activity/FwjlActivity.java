@@ -159,6 +159,7 @@ public class FwjlActivity extends AppCompatActivity {
                 startActivity(new Intent(FwjlActivity.this, FwpjActivity.class));
             }
         });
+        listView.setAdapter(new FwjlAdapter(FwjlActivity.this, fwjls1));
     }
 
 

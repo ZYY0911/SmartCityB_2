@@ -5,12 +5,32 @@
     android:orientation="vertical">
 
 
-    <include layout="@layout/head"/>
+    <include layout="@layout/head" />
+
     <ImageView
         android:id="@+id/iv_photo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="fitXY" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="#333"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp" />
+
+    </ScrollView>
 
 
     <LinearLayout
@@ -20,9 +40,9 @@
 
 
         <TextView
+            android:id="@+id/tv_ptss"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:id="@+id/tv_ptss"
             android:layout_weight="1"
             android:background="@drawable/text_line"
             android:gravity="center"
@@ -32,8 +52,8 @@
             android:textSize="20sp" />
 
         <TextView
-            android:layout_width="0dp"
             android:id="@+id/tv_fwtx"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/text_no_line"
@@ -54,9 +74,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:lineSpacingMultiplier="2"
             android:padding="20dp"
             android:text="XXXX"
-            android:lineSpacingMultiplier="2"
             android:textColor="#666"
             android:textSize="20sp" />
 
